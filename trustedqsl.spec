@@ -27,6 +27,7 @@ BuildRequires:  expat-devel
 BuildRequires:  wxgtku3.0-devel
 BuildRequires:  zlib-devel
 BuildRequires:  desktop-file-utils
+BuildRequires:  appstream-util
 BuildRequires:  pkgconfig(appstream-glib)
 
 Requires:       curl
