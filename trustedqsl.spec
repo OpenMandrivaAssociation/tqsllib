@@ -38,6 +38,7 @@ contains the GUI applications tqslcert and tqsl.
 
 %package -n 	%{libname}
 Summary:        TrustedQSL library
+Provides:	tqsllib = %{EVRD}
 
 %description -n %{libname}
 The TrustedQSL library is used for generating digitally signed
