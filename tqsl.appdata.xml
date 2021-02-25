@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2016 Richard Shaw <hobbes1069@gmail.com> -->
+<component type="desktop">
+  <id>tqsl.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>BSD</project_license>
+  <name>TrustedQSL</name>
+  <summary>Open source libraries and utilities to support using digital signatures for Amateur
+radio QSL information.</summary>
+  <description>
+    <p>
+TQSL is an application used to digitally sign and upload QSOs to the ARRL's Logbook of the World (LoTW) online service, and to manage the Callsign Certificates used when digitally signing.
+    </p>
+  </description>
+  <!--
+  <screenshots>
+    <screenshot type="default">
+      <image>http://comical.sourceforge.net/images/comical-0.5-linux.jpg</image>
+    </screenshot>
+  </screenshots>
+  -->
+  <url type="homepage">http://www.rickmurphy.net/trustedqsl.org/</url>
+  <update_contact>hobbes1069_at_gmail.com</update_contact>
+</component>

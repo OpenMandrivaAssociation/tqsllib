@@ -1,0 +1,48 @@
+Index: tqsl-2.5.2/apps/CMakeLists.txt
+===================================================================
+--- tqsl-2.5.2.orig/apps/CMakeLists.txt
++++ tqsl-2.5.2/apps/CMakeLists.txt
+@@ -61,13 +61,6 @@ if (NOT DEFINED TQSL_RPATH)
+ 	SET (TQSL_RPATH FALSE)
+ endif ()
+ 
+-if(NOT WIN32) #rpath setup
+-	SET(CMAKE_SKIP_BUILD_RPATH ${TQSL_RPATH})
+-	SET(CMAKE_BUILD_WITH_INSTALL_RPATH ${TQSL_RPATH}) 
+-	SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+-	SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
+-endif()
+-
+ 
+ set(TQSL_SRC tqsl.cpp extwizard.cpp tqslwiz.cpp dxcc.cpp stationdial.cpp
+ qsodatadialog.cpp tqslvalidator.cpp tqsl_prefs.cpp wxutil.cpp tqslhelp.cpp
+Index: tqsl-2.5.2/CMakeLists.txt
+===================================================================
+--- tqsl-2.5.2.orig/CMakeLists.txt
++++ tqsl-2.5.2/CMakeLists.txt
+@@ -11,22 +11,9 @@ IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux"
+     SET(LINUX TRUE)
+ ENDIF ()
+ 
+-SET (LIB_SUFFIX "")
+-
+-# Pre-set LIB_SUFFIX for 64-bit Linux platforms
+-IF (LINUX AND CMAKE_SHARED_LIBRARY_PREFIX STREQUAL "lib64")
+-  SET (LIB_SUFFIX "64")
+-ENDIF()
+-
+-# Make sure that there's a value for LIB_SUFFIX
+-IF (LINUX AND NOT CMAKE_SHARED_LIBRARY_PREFIX AND NOT LIB_SUFFIX) 
+-  # check 64 bit
+-    IF (CMAKE_SIZEOF_VOID_P EQUAL 4)
+-      SET (LIB_SUFFIX "")
+-    ELSE (CMAKE_SIZEOF_VOID_P EQUAL 4)
+-      SET (LIB_SUFFIX "64")
+-    ENDIF (CMAKE_SIZEOF_VOID_P EQUAL 4)
+-ENDIF (LINUX AND NOT CMAKE_SHARED_LIBRARY_PREFIX AND NOT LIB_SUFFIX) 
++if(LINUX)
++	include(GNUInstallDirs)
++endif(LINUX)
+ 
+ if(WIN32)
+   set(CMAKE_FIND_LIBRARY_SUFFIXES .lib .a ${CMAKE_FIND_LIBRARY_SUFFIXES})
