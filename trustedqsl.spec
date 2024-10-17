@@ -11,7 +11,7 @@ Version:        2.5.7
 Release:        2%{?dist}
 Summary:        Tool for digitally signing Amateur Radio QSO records
 License:        BSD
-URL:            http://sourceforge.net/projects/trustedqsl/
+URL:            https://sourceforge.net/projects/trustedqsl/
 
 Source0:        https://sourceforge.net/projects/%{name}/files/%{srcname}-%{version}.tar.gz
 Source1:        tqsl.appdata.xml
